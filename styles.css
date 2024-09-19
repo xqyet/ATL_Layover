@@ -1,0 +1,103 @@
+﻿:root {
+    --main-bg-color: linear-gradient(45deg, #fb3f62 0%, #204c80 37%, #004249 97%) center center/cover no-repeat fixed;
+    --text: #eee;
+    --text-muted: #999;
+    --link-color: rgb(0, 255, 157);
+    --button-color: #fb3f62;
+    --button-color-hover: #cd4164;
+    --button-text: #eee;
+}
+
+/* General body styling */
+body {
+    background: var(--main-bg-color);
+    font-family: 'American Captain', Arial, sans-serif;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    padding: 20px;
+    text-align: left;
+    margin-top: 120px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 500px; /* Made the logo bigger */
+    height: auto;
+    margin-top: -100px;
+}
+
+h3 {
+    font-size: 2em;
+    font-family: 'American Captain', Arial, sans-serif;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between flight containers */
+    margin-top: 20px;
+}
+
+/* Flight Row Container */
+.flight-row {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+    .flight-row:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    }
+
+    .flight-row div {
+        padding: 5px 0; /* Space between each flight detail */
+        color: var(--text); /* Text color */
+        font-size: 1.1em;
+    }
+
+        /* Ensures a consistent look for the flight info */
+        .flight-row div strong {
+            color: var(--link-color); /* Highlighted label color */
+            font-weight: bold;
+        }
+
+        .flight-row div span {
+            color: var(--text-muted); /* Muted color for secondary info */
+        }
+
+/* Styling for grid headers */
+.flight-grid-header {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--link-color);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--text-muted);
+}
+
+/* To ensure a responsive layout */
+@media only screen and (max-width: 768px) {
+    .flight-row {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+}
